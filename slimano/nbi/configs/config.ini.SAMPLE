@@ -1,0 +1,11 @@
+[DEFAULT]
+log_file = ./slimano.log
+debug = True
+descriptors_path =
+
+[API]
+port = 5000
+host = 0.0.0.0
+
+[AMQP]
+uri = pyamqp://guest:guest@localhost

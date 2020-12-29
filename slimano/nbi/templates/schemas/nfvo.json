@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "slimano:nfvo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "auth": {
+                    "type": "object",
+                    "properties": {}
+                }
+            }
+        }
+    }
+}

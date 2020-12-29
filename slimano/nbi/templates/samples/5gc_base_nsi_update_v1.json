@@ -1,0 +1,26 @@
+{
+    "slimano:nsi": {
+        "name": "1234qwerty_instance",
+        "nst-name": "1234qwerty",
+        "dependencies": [],
+        "actions": [
+            {
+                "name": "cvnf_move",
+                "parameters": {
+                    "name": "test-stack",
+                    "docker_compose": "http://192.168.85.28/docker/test/docker-compose.yml",
+                    "nsri_name_source": "isp_instance",
+                    "vnfd_name_source": "swarmc",
+                    "vim_source": "openstack-atnog-4",
+                    "nsri_name_target": "ott_instance",
+                    "vnfd_name_target": "swarmc",
+                    "vim_target": "openstack-5gmaster-edge"
+                }
+            }
+        ],
+        "nss-instances": [],
+        "sdn-apps": [],
+        "connections": [],
+        "callback": "http://192.168.94.118:8181/callback"
+    }
+}

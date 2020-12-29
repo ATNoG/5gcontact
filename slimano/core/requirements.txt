@@ -1,0 +1,4 @@
+sqlalchemy
+pymysql
+PyYAML
+nameko==3.0.0rc6

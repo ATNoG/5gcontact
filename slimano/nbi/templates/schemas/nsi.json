@@ -1,0 +1,8 @@
+{
+    "type": "object",
+    "properties": {
+        "slimano:nsi": {
+            "type": "object"
+        }
+    }
+}

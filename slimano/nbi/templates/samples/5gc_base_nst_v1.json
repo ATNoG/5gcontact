@@ -1,0 +1,71 @@
+{
+    "slimano:nst": {
+        "name": "1234qwerty",
+        "dependencies": [],
+        "actions": [
+            {
+                "name": "cvnf_move",
+                "type": "custom-action",
+                "agent": "osm-agent",
+                "parameters": [
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "docker_compose"
+                    },
+                    {
+                        "name": "nsri_name_source"
+                    },
+                    {
+                        "name": "vnfd_name_source"
+                    },
+                    {
+                        "name": "vim_source"
+                    },
+                    {
+                        "name": "nsri_name_target"
+                    },
+                    {
+                        "name": "vnfd_name_target"
+                    },
+                    {
+                        "name": "vim_target"
+                    }
+                ]
+            }
+        ],
+        "nss-templates": [
+            {
+                "template-name": "ott",
+                "type": "nfvo",
+                "nfvo-type": "osm",
+                "nfvo-name": "12345qwertyu",
+                "instantiation": {
+                    "inputs": [
+                        {
+                            "name": "sdn_app_url"
+                        }
+                    ],
+                    "outputs": []
+                }
+            },
+            {
+                "template-name": "isp",
+                "type": "nfvo",
+                "nfvo-type": "osm",
+                "nfvo-name": "12345qwertyu",
+                "instantiation": {
+                    "inputs": [
+                        {
+                            "name": "sdn_app_url"
+                        }
+                    ],
+                    "outputs": []
+                }
+            }
+        ],
+        "sdn-apps": [],
+        "connections": []
+    }
+}

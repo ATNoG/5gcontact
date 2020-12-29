@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "da9d5382-5131-429a-84f4-da938c177125",
+		"name": "sliMANO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create NFVO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nfvo\": {\n        \"name\": \"5gcontact-nfvo2\",\n        \"type\": \"osm\",\n        \"url\": \"https://192.168.85.148:9999\",\n        \"auth\": {\n            \"username\": \"manuelfernandes\",\n            \"password\": \"5gcontact@itneo\",\n            \"project_id\": \"5gcontact\"\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nfvo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nfvo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nst\": {\n        \"name\": \"1234qwerty\",\n        \"dependencies\": [],\n        \"actions\": [\n            {\n                \"name\": \"cvnf_move\",\n                \"type\": \"custom-action\",\n                \"agent\": \"osm-agent\",\n                \"parameters\": [\n                    {\"name\": \"name\"},\n                    {\"name\": \"docker_compose\"},\n                    {\"name\": \"nsri_name_source\"},\n                    {\"name\": \"vnfd_name_source\"},\n                    {\"name\": \"vim_source\"},\n                    {\"name\": \"nsri_name_target\"},\n                    {\"name\": \"vnfd_name_target\"},\n                    {\"name\": \"vim_target\"}\n\n                ]\n            }\n        ],\n        \"ns-subnet\": {\n            \"actions\": [],\n            \"templates\": [\n                {\n                    \"template-name\": \"ott\",\n                    \"type\": \"nfvo\",\n                    \"nfvo-type\": \"osm\",\n                    \"nfvo-name\": \"12345qwertyu\",\n                    \"parameters\": {\n                        \"instantiation\": [\n                            {\"name\":  \"sdn_app_url\"},\n                            {\"name\":  \"docker_notifier_url\"},\n                            {\"name\":  \"node_alerts_url\"},\n                            {\"name\":  \"load_threshold\"}\n                        ]\n                    }\n                },\n                {\n                    \"template-name\": \"isp\",\n                    \"type\": \"nfvo\",\n                    \"nfvo-type\": \"osm\",\n                    \"nfvo-name\": \"12345qwertyu\",\n                    \"parameters\": {\n                        \"instantiation\": [\n                            {\"name\":  \"sdn_app_url\"},\n                            {\"name\":  \"docker_notifier_url\"},\n                            {\"name\":  \"node_alerts_url\"},\n                            {\"name\":  \"load_threshold\"}\n                        ]\n                    }\n                }\n            ]\n        },\n        \"sdn-apps\": [],\n        \"connections\": []\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NST 1 instance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nst\": {\n        \"name\": \"isp-nst\",\n        \"dependencies\": [],\n        \"actions\": [\n            {\n                \"name\": \"cvnf_move\",\n                \"type\": \"custom-action\",\n                \"agent\": \"osm-agent\",\n                \"parameters\": [\n                    {\"name\": \"name\"},\n                    {\"name\": \"docker_compose\"},\n                    {\"name\": \"nsri_name_source\"},\n                    {\"name\": \"vnfd_name_source\"},\n                    {\"name\": \"vim_source\"},\n                    {\"name\": \"nsri_name_target\"},\n                    {\"name\": \"vnfd_name_target\"},\n                    {\"name\": \"vim_target\"}\n\n                ]\n            }\n        ],\n        \"nss-templates\": [\n            {\n                \"template-name\": \"isp\",\n                \"type\": \"nfvo\",\n                \"nfvo-type\": \"osm\",\n                \"nfvo-name\": \"5gcontact-nfvo2\",\n                \"instantiation\": {\n                \t\"inputs\": [\n                        {\"name\":  \"sdn_app_url\"},\n                        {\"name\":  \"docker_notifier_url\"},\n                        {\"name\":  \"node_alerts_url\"},\n                        {\"name\":  \"load_threshold\"}\n                \t],\n                \t\"outputs\": []\n                }\n            }\n        ],\n        \"sdn-apps\": [],\n        \"connections\": []\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NST 1 k8s",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nst\": {\n        \"name\": \"k8s-nst\",\n        \"dependencies\": [],\n        \"actions\": [\n            {\n                \"name\": \"cvnf_move\",\n                \"type\": \"custom-action\",\n                \"agent\": \"osm-agent\",\n                \"parameters\": [\n                    {\"name\": \"name\"},\n                    {\"name\": \"docker_compose\"},\n                    {\"name\": \"nsri_name_source\"},\n                    {\"name\": \"vnfd_name_source\"},\n                    {\"name\": \"vim_source\"},\n                    {\"name\": \"nsri_name_target\"},\n                    {\"name\": \"vnfd_name_target\"},\n                    {\"name\": \"vim_target\"}\n\n                ]\n            }\n        ],\n        \"nss-templates\": [\n            {\n                \"template-name\": \"k8s\",\n                \"type\": \"nfvo\",\n                \"nfvo-type\": \"osm\",\n                \"nfvo-name\": \"5gcontact-nfvo2\",\n                \"instantiation\": {\n                \t\"inputs\": [],\n                \t\"outputs\": []\n                }\n            }\n        ],\n        \"sdn-apps\": [],\n        \"connections\": []\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NST 2 instances",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nst\": {\n        \"name\": \"2ns-nst\",\n        \"dependencies\": [],\n        \"actions\": [\n            {\n                \"name\": \"cvnf_move\",\n                \"type\": \"custom-action\",\n                \"agent\": \"osm-agent\",\n                \"parameters\": [\n                    {\"name\": \"name\"},\n                    {\"name\": \"docker_compose\"},\n                    {\"name\": \"nsri_name_source\"},\n                    {\"name\": \"vnfd_name_source\"},\n                    {\"name\": \"vim_source\"},\n                    {\"name\": \"nsri_name_target\"},\n                    {\"name\": \"vnfd_name_target\"},\n                    {\"name\": \"vim_target\"}\n\n                ]\n            }\n        ],\n        \"ns-subnet\": {\n            \"actions\": [],\n            \"templates\": [\n                {\n                    \"template-name\": \"isp\",\n                    \"type\": \"nfvo\",\n                    \"nfvo-type\": \"osm\",\n                    \"nfvo-name\": \"5gcontact-nfvo2\",\n                    \"instantiation\": {\n                    \t\"inputs\": [\n\t                        {\"name\":  \"sdn_app_url\"},\n\t                        {\"name\":  \"docker_notifier_url\"},\n\t                        {\"name\":  \"node_alerts_url\"},\n\t                        {\"name\":  \"load_threshold\"}\n                    \t],\n                    \t\"outputs\": []\n                    }\n                },\n                {\n                    \"template-name\": \"k8s\",\n                    \"type\": \"nfvo\",\n                    \"nfvo-type\": \"osm\",\n                    \"nfvo-name\": \"5gcontact-nfvo2\",\n                    \"instantiation\": {}\n                }\n            ]\n        },\n        \"sdn-apps\": [],\n        \"connections\": []\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NSI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nsi\": {\n        \"name\": \"1234qwerty_instance\",\n        \"nst-name\": \"1234qwerty\",\n        \"dependencies\": [],\n        \"actions\": [],\n        \"nss-instances\": [\n            {\n                \"name\": \"ott_instance\",\n                \"template-name\": \"ott\",\n                \"location\": \"openstack-atnog-edge\",\n                \"parameters\": {\n                    \"instantiation\": {\n                        \"sdn_app_url\": {\"vnf-index\": 1, \"value\": \"http://10.0.1.2:8080/sdnController/stack_ready\"},\n                        \"docker_notifier_url\": {\"vnf-index\": 3, \"value\": \"\"},\n\t\t\t\t\t\t\"node_alerts_url\": {\"vnf-index\": 3, \"value\": \"\"},\n\t\t\t\t\t\t\"load_threshold\": {\"vnf-index\": 3, \"value\": 0}\n                    }\n                }\n            },\n            {\n                \"name\": \"isp_instance\",\n                \"template-name\": \"isp\",\n                \"location\": \"openstack-atnog-4\",\n                \"parameters\": {\n                    \"instantiation\": {\n                        \"sdn_app_url\": {\"vnf-index\": 1, \"value\": \"http://10.0.1.2:8080/sdnController/stack_ready\"},\n                        \"docker_notifier_url\": {\"vnf-index\": 3, \"value\": \"\"},\n\t\t\t\t\t\t\"node_alerts_url\": {\"vnf-index\": 3, \"value\": \"\"},\n\t\t\t\t\t\t\"load_threshold\": {\"vnf-index\": 3, \"value\": 0}\n                    }\n                }\n            }\n        ],\n        \"sdn-apps\": [],\n        \"connections\": [],\n        \"callback\": \"http://192.168.94.118:8181/callback\"\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nsi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nsi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NSI 1 instance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nsi\": {\n        \"name\": \"isp-instance\",\n        \"nst-name\": \"isp-nst\",\n        \"dependencies\": [],\n        \"actions\": [],\n        \"nss-instances\": [\n            {\n                \"name\": \"isp-instance\",\n                \"template-name\": \"isp\",\n                \"location\": \"openstack-atnog-4\",\n                \"instantiation\": {\n                \t\"inputs\": {\n                        \"sdn_app_url\": {\"vnf-index\": 1, \"value\": \"http://10.0.1.2:8080/sdnController/stack_ready\"},\n                        \"docker_notifier_url\": {\"vnf-index\": 3, \"value\": \"empty\"},\n\t\t\t\t\t\t\"node_alerts_url\": {\"vnf-index\": 3, \"value\": \"empty\"},\n\t\t\t\t\t\t\"load_threshold\": {\"vnf-index\": 3, \"value\": 0}\n                \t},\n                \t\"outputs\": {}\n                }\n            }\n        ],\n        \"sdn-apps\": [],\n        \"connections\": [],\n        \"callback\": \"http://192.168.94.118:8080/callback\"\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nsi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nsi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NSI 1 instance k8s",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nsi\": {\n        \"name\": \"k8s-instance\",\n        \"nst-name\": \"k8s-nst\",\n        \"dependencies\": [],\n        \"actions\": [],\n        \"nss-instances\": [\n            {\n                \"name\": \"k8s-instance\",\n                \"template-name\": \"k8s\",\n                \"location\": \"openstack-atnog-4\",\n                \"instantiation\": {\n                \t\"inputs\": {},\n                \t\"outputs\": {}\n                }\n            }\n        ],\n        \"sdn-apps\": [],\n        \"connections\": [],\n        \"callback\": \"http://192.168.94.118:8080/callback\"\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nsi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nsi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create NSI 2 instances",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"slimano:nsi\": {\n        \"name\": \"2ns-instance\",\n        \"nst-name\": \"2ns-nst\",\n        \"dependencies\": [],\n        \"actions\": [],\n        \"ns-subnet\": [\n            {\n                \"name\": \"isp-instance\",\n                \"template-name\": \"isp\",\n                \"location\": \"openstack-atnog-4\",\n                \"instantiation\": {\n                \t\"inputs\": {\n                        \"sdn_app_url\": {\"vnf-index\": 1, \"value\": \"http://10.0.1.2:8080/sdnController/stack_ready\"},\n                        \"docker_notifier_url\": {\"vnf-index\": 3, \"value\": \"empty\"},\n\t\t\t\t\t\t\"node_alerts_url\": {\"vnf-index\": 3, \"value\": \"empty\"},\n\t\t\t\t\t\t\"load_threshold\": {\"vnf-index\": 3, \"value\": 0}\n                \t},\n                \t\"outputs\": {}\n                },\n                \"outputs\": {},\n                \"dependencies\": []\n            },\n            {\n                \"name\": \"k8s-instance\",\n                \"template-name\": \"k8s\",\n                \"location\": \"openstack-atnog-4\",\n                \"instantiation\": {},\n                \"outputs\": {},\n                \"dependencies\": []\n            }\n        ],\n        \"sdn-apps\": [],\n        \"connections\": [],\n        \"callback\": \"http://192.168.94.118:8080/callback\"\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/nsi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nsi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete NSI",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/nsi/e15675b1-c4ec-41db-8b56-8a0400540ef3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nsi",
+						"e15675b1-c4ec-41db-8b56-8a0400540ef3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get NSI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/nsi/d4bfcda7-5f50-4818-9a50-d60a5e0c06e0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"nsi",
+						"d4bfcda7-5f50-4818-9a50-d60a5e0c06e0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

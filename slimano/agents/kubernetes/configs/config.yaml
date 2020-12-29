@@ -1,0 +1,15 @@
+AMQP_URI: 'pyamqp://guest:guest@rabbitmq'
+rpc_exchange: 'slimano-rpc'
+max_workers: 10
+parent_calls_tracked: 10
+
+HEARTBEAT: 15
+
+LOGGING:
+    version: 1
+    handlers:
+        console:
+            class: logging.StreamHandler
+    root:
+        level: DEBUG
+        handlers: [console]

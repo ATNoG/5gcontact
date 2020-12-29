@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+    rabbitmq:
+        container_name: sm_rabbitmq_server
+        image: rabbitmq:3.6
+        ports:
+            - "15672:15672"
+        networks:
+            - rpc
+    mariadb:
+        container_name: sm_mariadb
+        image: mariadb:latest
+        networks:
+            - database
+        environment:
+            MYSQL_ROOT_PASSWORD: "slimano_root"
+            MYSQL_USER: "slimano"
+            MYSQL_PASSWORD: "slimano_pass"
+            MYSQL_DATABASE: "slimano"
+    osm_agent:
+        container_name: sm_osm_agent
+        restart: on-failure
+        build:
+            context: ./
+            dockerfile: ./agents/osm/Dockerfile
+        depends_on:
+            - "rabbitmq"
+        networks:
+            - rpc
+    core:
+        container_name: sm_core
+        restart: on-failure
+        build:
+            context: ./
+            dockerfile: ./core/Dockerfile
+        depends_on:
+            - "mariadb"
+            - "rabbitmq"
+        networks:
+            - database
+            - rpc
+    nbi:
+        container_name: sm_nbi
+        restart: on-failure
+        build:
+            context: ./
+            dockerfile: ./nbi/Dockerfile
+        depends_on:
+            - "rabbitmq"
+        ports:
+            - "5000:5000"
+        networks:
+            - rpc
+
+networks:
+    rpc:
+        driver: bridge
+        # driver: overlay
+        ipam:
+            config:
+                - subnet: 10.103.1.0/24
+    database:
+        driver: bridge
+        # driver: overlay
+        ipam:
+            config:
+                - subnet: 10.103.2.0/24

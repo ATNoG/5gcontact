@@ -1,0 +1,16 @@
+{
+    "slimano:nsi": {
+        "name": "1234qwertyu",
+        "dependencies": [{"type":  "nst", "name":  "1234qwerty"}],
+        "ns-subnet": {
+            "actions": [],
+            "instances": []
+        },
+        "connections": []
+    }
+}
+
+
+
+
+

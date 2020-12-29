@@ -1,0 +1,20 @@
+{
+    "name": "<CVNF_NAME>",
+    "docker_compose": "<DOCKER_COMPOSE_FILE_URL>",
+    "location": {
+        "source": {
+            "nsr_name": "<NSR_NAME>",
+            "vnfd_name": "<VNF_NAME>",
+            "vim": "<SOURCE_DATACENTER>"
+        },
+        "target": {
+            "nsr_name": "<NSR_NAME>",
+            "vnfd_name": "<VNF_NAME>",
+            "vim": "<TARGET_DATACENTER>"
+        }
+    },
+    "params": {
+        "vue_nbi_port": 2222,
+        "vue_sbi_port": 3333
+    }
+}

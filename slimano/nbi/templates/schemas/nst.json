@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "properties": {
+        "slimano:nst": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "dependencies": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "agent": {
+                                "type": "string"
+                            },
+                            "parameters": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "nss-templates": {
+                    "type": "array"
+                }
+            },
+            "sdn-apps": {
+                "type": "array"
+            },
+            "connections": {
+                "type": "array"
+            }
+        }
+    }
+}

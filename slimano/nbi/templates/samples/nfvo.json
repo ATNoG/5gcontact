@@ -1,0 +1,12 @@
+{
+    "slimano:nfvo": {
+        "name": "5gcontact-nfvo",
+        "type": "osm",
+        "url": "https://192.168.85.148:9999",
+        "auth": {
+            "username": "manuelfernandes",
+            "password": "5gcontact@it",
+            "project_id": "5gcontact"
+        }
+    }
+}

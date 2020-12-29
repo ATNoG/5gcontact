@@ -1,0 +1,51 @@
+{
+    "slimano:nsi": {
+        "name": "1234qwerty_instance",
+        "nst-name": "1234qwerty",
+        "dependencies": [],
+        "actions": [],
+        "nss-instances": [
+            {
+                "name": "ott_instance",
+                "template-name": "ott",
+                "location": "openstack-atnog-4",
+                "instantiation": {
+                    "inputs": {
+                        "sdn_app_url": {
+                            "vnf-index": 1,
+                            "value": "http://10.0.1.2:8080/sdnController/stack_ready"
+                        }
+                    },
+                    "outputs": {
+                        "sdn_app_ip_address": {
+                            "path":  "$.osm:ns-instance.vnfr.ip_address"
+                        }
+                    }
+                },
+                "dependencies": []
+            },
+            {
+                "name": "isp_instance",
+                "template-name": "isp",
+                "location": "openstack-atnog-edge",
+                "instantiation": {
+                    "inputs": {
+                        "sdn_app_url": {
+                            "vnf-index": 1,
+                            "value": "http://10.0.1.2:8080/sdnController/stack_ready"
+                        }
+                    },
+                    "outputs": {
+                        "sdn_app_ip_address": {
+                            "path":  "$.osm:ns-instance.vnfr.ip_address"
+                        }
+                    }
+                },
+                "dependencies": []
+            }
+        ],
+        "sdn-apps": [],
+        "connections": [],
+        "callback": "http://192.168.94.118:8181/callback"
+    }
+}

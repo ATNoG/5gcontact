@@ -1,0 +1,41 @@
+---
+
+slimano:nsi:
+    name: 1234qwerty
+#    nfvos:
+#        - name: 12345qwertyu
+#          type: openmano
+#          endpoint: http://this.that
+    parameters:
+
+    nss-instances:
+        - nfvo-name: 12345qwertyu
+          name: ott_instance
+          descriptor-name: ott
+          parameters:
+              internal:
+                  cvnfs:
+                      - cvnf-type: swarm
+                        vnfd-name: swarmc
+              external:
+                  this: xxx
+                  that: yyy
+
+        - nfvo-name: 12345qwertyu
+          name: isp_instance
+          descriptor- name: isp
+          parameters:
+              internal:
+                  cvnfs:
+                      - type: swarm
+                        vnfd-name: swarmc
+              external:
+                  this: xxx
+                  that: yyy
+
+
+    connections:
+
+
+
+

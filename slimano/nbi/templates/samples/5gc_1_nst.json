@@ -1,0 +1,27 @@
+{
+    "slimano:nst": {
+        "name": "1234qwertyu",
+        "dependencies": [{"type":  "nst", "name":  "1234qwerty"}],
+        "ns-subnet": {
+            "actions": [
+                {
+                    "name": "stack-deploy",
+                    "parameters": [
+                        {"name":  "docker_compose_url"},
+                        {"name":  "stack_name"}]
+                    },
+                {
+                    "name": "stack-remove",
+                    "parameters": [
+                        {"name":  "stack_name"}]
+                }],
+            "templates": []
+        },
+        "connections": []
+    }
+}
+
+
+
+
+
