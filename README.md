@@ -23,3 +23,8 @@ The MAAS, based on the Metal as a Service deployment, encompasses the necessary 
 ## Edge Mobility Manager
 
 The Edge Mobility Manager emulates a handover between different Radio Access Network (RAN) endpoints, in a Multi-access Edge Computing (MEC) environment.
+
+# Support or Contact
+
+Having trouble with this page? Check out our project [website](http://5gcontact.av.it.pt)
+
