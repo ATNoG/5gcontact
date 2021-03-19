@@ -12,15 +12,15 @@ The SLIMANO project software is composed by three independent software applicati
 
 * ### Slice Management and Orchestration Abstraction Framework Core
 
-It composes the engine and implemented plugins for enabling the instantiation of end-to-end network slices.
+  It composes the engine and implemented plugins for enabling the instantiation of end-to-end network slices.
 
 * ### Client
 
-It composes a client for instantiating network slices.
+  It composes a client for instantiating network slices.
 
 * ### Convergion Agents
 
-It composes a set of Conversion Agents that integrated different networks in network slicing management and orquestration environments.
+  It composes a set of Conversion Agents that integrated different networks in network slicing management and orquestration environments.
 
 ## Expert System
 
