@@ -8,6 +8,20 @@ The project ran from 2017 to 2021 and is now closed.
 
 This framework provides an abstract mechanism for instantiating end-to-end network slices, composed by a chain of physical and virtual network functions. It supports plug-ins to interact with different network orchestration entities, namely different management and orchestration (MANO), Software Defined Networking (SDN) controllers and Radio Access Network (RAN) controllers. With this the framework is able to request network resources and coordinate the interaction among network orchestration entities for its instantiation and chaining in order to perform an end-to-end slice.
 
+The SLIMANO project software is composed by three independent software applications:
+
+### Slice Management and Orchestration Abstraction Framework Core
+
+It composes the engine and implemented plugins for enabling the instantiation of end-to-end network slices.
+
+### Client
+
+It composes a client for instantiating network slices.
+
+### Convergion Agents
+
+It composes a set of Conversion Agents that integrated different networks in network slicing management and orquestration environments.
+
 ## Expert System
 
 The expert system is a network context framework realized through a simplified rule engine, where it is possible to upload a set of rules that dictate how the system should operate in certain conditions. It monitors several properties in real-time, that can either be raw values or classifications/predictions made by any Machine Learning/Deep Learning model. The system can be applied considering values coming from network entities (for network context), from connected devices (e.g., sensors and other terminals) and from services (i.e., feedback context from services such as indicating that video is being received in proper conditions), with the information being sent to the 5GCONTACT framework.
