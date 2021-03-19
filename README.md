@@ -22,7 +22,7 @@ The MAAS, based on the Metal as a Service deployment, encompasses the necessary 
 
 ## Edge Mobility Manager
 
-The Edge Mobility Manager emulates a handover between different Radio Access Network (RAN) endpoints, in a Multi-access Edge Computing (MEC) environment.
+The Edge Mobility Manager emulates a handover between different Radio Access Network (RAN) endpoints, in a Multi-access Edge Computing (MEC) environment. It is composed of a SDN Controller Application that runs on top of the [ryu](https://ryu-sdn.org/) SDN Framework Controller, as well as the necessary running scripts for installing and configuring the necessary switch bridges in [Open vSwitch](https://www.openvswitch.org/). The SDN Controller Application exposes a REST interface that allows external entities to trigger the handover.
 
 # Support or Contact
 
