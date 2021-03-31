@@ -1,4 +1,4 @@
-#Slimano#
+# Slimano
 ## Slice Management and Orchestration framework
 
 Slimano agregates 3 separate applications:
