@@ -1,0 +1,7 @@
+Slimano agregates 3 separate applications:
+
+CORE: A platform core application for the management and orchestration of network slices https://github.com/ATNoG/5gcontact/tree/main/slimano/core
+
+CLIENT: A client application for instantiating network slices https://github.com/ATNoG/5gcontact/tree/main/slimano/client
+
+AGENTS: Several agent applications for integrating different network technologies as slices to be orchestrated https://github.com/ATNoG/5gcontact/tree/main/slimano/agents
